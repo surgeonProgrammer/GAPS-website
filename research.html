@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghana Association of Paediatric Surgeons(GAPS)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="text-gray-900">
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 shadow-lg">
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <!-- Logo and Title -->
+        <div class="text-2xl flex items-center">
+          <img
+            src="Images/logo.png"
+            alt="Ghana Paediatric Surgeons Logo"
+            class="h-16 mr-2"
+          />
+          <div class="flex text-[#3B888E] text-[20px]">
+            <div
+              class="font-bold"
+              style="font-family: 'Montserrat', sans-serif"
+            >
+              <p>Ghana Association of <br />Paediatric Surgeons</p>
+            </div>
+            <div
+              class="text-[30px] flex justify-center items-center text-red-400"
+            >
+              <p>(GAPS)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class='flex gap-[20px] mr-[-100px] lg:mr-[-250px]'>
+          <button
+          class="hidden md:block border bg-[#0F2144] text-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
+          style="font-family: 'Montserrat', sans-serif"
+        >
+        <a href="registries.html" class="block  hover:text-red-400"
+        >National Registry</a
+        </button>
+
+        <button
+        class="hidden lg:block border-[2px] border-[#3B888E] px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
+        style="font-family: 'Montserrat', sans-serif"
+      >
+      <a href="research.html" class="block  hover:text-red-400"
+      >Research</a
+      </button>
+        </div>
+       
+
+        <!-- Hamburger Menu (Always Visible) -->
+        <button class="text-[#3B888E]" id="menu-btn">
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="#3B888E"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+          <p class='text-[12px] font-bold'>Menu</p>
+        </button>
+      </div>
+
+      <!-- Menu Links (Initially Hidden) -->
+      <ul
+        id="menu"
+        class="hidden fixed top-16 left-0 w-full bg-white text-cyan-600 text-lg font-semibold space-y-2 p-4 shadow-lg"
+      >
+        <li>
+          <a href="index.html" class="block px-4 py-2 hover:text-red-400"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="about.html" class="block px-4 py-2 hover:text-red-400"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="registries.html" class="block px-4 py-2 hover:text-red-400"
+            >National Registry</a
+          >
+        </li>
+        <li>
+          <a href="heroes.html" class="block px-4 py-2 hover:text-red-400"
+            >Our Heroes</a
+          >
+        </li>
+        <li>
+          <a href="research.html" class="block px-4 py-2 hover:text-red-400"
+            >Research</a
+          >
+        </li>
+        <li>
+          <a href="newsevents.html" class="block px-4 py-2 hover:text-red-400"
+            >News & Events</a
+          >
+        </li>
+        <li>
+          <a href="members.html" class="block px-4 py-2 hover:text-red-400"
+            >Members</a
+          >
+        </li>
+        <li>
+          <a href="contact.html" class="block px-4 py-2 hover:text-red-400"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    
+    
+    <!-- Main Content Placeholder -->
+
+      <section class="mt-24 flex flex-col items-center justify-center bg-[#117997] text-white w-full h-full">
+        
+      <h1 class="text-center text-3xl font-bold ">
+        Welcome to the Ghana Association for Paediatric Surgeons
+      </h1>
+
+      <div class="mt-24 flex flex-col items-center justify-center">
+        <div class='flex gap-[20px]'>
+          <button
+          class=" md:hidden border bg-[#0F2144] text-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
+          style="font-family: 'Montserrat', sans-serif"
+        >
+        <a href="registries.html" class="block  hover:text-red-400"
+        >National Registry</a
+        </button>
+  
+        <button
+        class=" md:hidden border-[2px] border-[#3B888E] px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
+        style="font-family: 'Montserrat', sans-serif"
+      >
+      <a href="research.html" class="block  hover:text-red-400"
+      >Research</a
+      </button>
+        </div>
+      <p class="text-center mt-4 text-lg">Main content goes here.</p>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cyan-500 text-white text-center p-4 mt-16">
+      <p>
+        &copy; 2024 Ghana Association for Paediatric Surgeons. All rights
+        reserved.
+      </p>
+    </footer>
+
+    <!-- JavaScript to Toggle Menu -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

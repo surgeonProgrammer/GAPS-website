@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hirschsprung Disease Registry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+      <h1 class="text-3xl font-bold mb-4 text-[#037383] text-center">
+        Hirschsprung Disease Data entry
+      </h1>
+      <form id="hirschsprungForm" class="space-y-6">
+        <!-- Patient Details -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-medium text-gray-700">Patient ID</label>
+            <input
+              type="text"
+              name="patientID"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              required
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700">First Name</label>
+            <input
+              type="text"
+              name="firstName"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              required
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700">Last Name</label>
+            <input
+              type="text"
+              name="lastName"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              required
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700">Date of Birth</label>
+            <input
+              type="date"
+              name="dateOfBirth"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              required
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700">Sex</label>
+            <select
+              name="sex"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700">Ethnicity</label>
+            <input
+              type="text"
+              name="ethnicity"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Place of Birth (Hospital/Location)</label
+            >
+            <input
+              type="text"
+              name="placeOfBirth"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Date of Diagnosis</label
+            >
+            <input
+              type="date"
+              name="dateOfDiagnosis"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+        </div>
+
+        <!-- Medical and Family History -->
+        <div>
+          <label class="block font-medium text-gray-700"
+            >Family History of Hirschsprung Disease</label
+          >
+          <select
+            name="familyHistory"
+            class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+          >
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-medium text-gray-700"
+            >Associated Syndromes</label
+          >
+          <input
+            type="text"
+            name="associatedSyndromes"
+            class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+          />
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Age at First Symptom</label
+            >
+            <input
+              type="number"
+              name="ageAtFirstSymptom"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Type of Symptoms</label
+            >
+            <input
+              type="text"
+              name="typeOfSymptoms"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Duration of Symptoms Before Diagnosis</label
+            >
+            <input
+              type="text"
+              name="durationOfSymptoms"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Initial Diagnosis Method</label
+            >
+            <input
+              type="text"
+              name="initialDiagnosisMethod"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Length of Aganglionosis</label
+            >
+            <input
+              type="text"
+              name="lengthOfAganglionosis"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Associated Anomalies</label
+            >
+            <input
+              type="text"
+              name="associatedAnomalies"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Abdominal X-ray Findings</label
+            >
+            <input
+              type="text"
+              name="abdominalXrayFindings"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Barium Enema Findings</label
+            >
+            <input
+              type="text"
+              name="bariumEnemaFindings"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Anorectal Manometry Findings</label
+            >
+            <input
+              type="text"
+              name="anorectalManometryFindings"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Rectal Biopsy Results</label
+            >
+            <input
+              type="text"
+              name="rectalBiopsyResults"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Genetic Testing Results</label
+            >
+            <input
+              type="text"
+              name="geneticTestingResults"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Date of Diagnostic Procedure(s)</label
+            >
+            <input
+              type="date"
+              name="dateOfDiagnosticProcedure"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Hospital where Diagnosis was Made</label
+            >
+            <input
+              type="text"
+              name="hospitalWhereDiagnosisMade"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+        </div>
+
+        <!-- Medical Management and Surgery -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Initial Medical Management</label
+            >
+            <input
+              type="text"
+              name="initialMedicalManagement"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Number of Hospitalizations Pre-Surgery</label
+            >
+            <input
+              type="number"
+              name="numHospitalizationsPreSurgery"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Preoperative Feeding Method</label
+            >
+            <input
+              type="text"
+              name="preoperativeFeedingMethod"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Presence of Enterocolitis Before Surgery</label
+            >
+            <select
+              name="presenceOfEnterocolitis"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            >
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Date of First Surgery Consultation</label
+            >
+            <input
+              type="date"
+              name="dateOfFirstSurgeryConsultation"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Surgery Type Planned</label
+            >
+            <input
+              type="text"
+              name="surgeryTypePlanned"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Date of Surgery</label
+            >
+            <input
+              type="date"
+              name="dateOfSurgery"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Type of Surgery</label
+            >
+            <input
+              type="text"
+              name="typeOfSurgery"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700">Surgeon Name</label>
+            <input
+              type="text"
+              name="surgeonName"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Surgical Complications</label
+            >
+            <input
+              type="text"
+              name="surgicalComplications"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+          <div>
+            <label class="block font-medium text-gray-700"
+              >Postoperative Complications</label
+            >
+            <input
+              type="text"
+              name="postoperativeComplications"
+              class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+            />
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex items-center justify-center gap-4">
+          <button
+            type="submit"
+            class="bg-red-400 text-white py-2 px-4 rounded-md"
+          >
+            Submit
+          </button>
+
+          <button
+            class="bg-red-400 text-white py-2 px-4 rounded-md"
+            onclick="window.open('index.html', '_self')"
+          >
+            Home page
+          </button>
+        </div>
+      </form>
+
+      <!-- Success message -->
+      <div id="responseMessage" class="mt-4 text-green-500 hidden">
+        Data submitted successfully!
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("hirschsprungForm");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const response = await fetch(
+          "https://script.google.com/macros/s/AKfycbzhj6CsKWBG_2COFHSb-ryXtvNdLW4jmshVj3qRdtE1poI7fWrmcUsIte7t0_gEXTPK/exec",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+
+        if (response.ok) {
+          document.getElementById("responseMessage").classList.remove("hidden");
+          form.reset();
+        }
+      });
+    </script>
+  </body>
+</html>

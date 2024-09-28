@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghana Association of Paediatric Surgeons(GAPS)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="text-gray-900">
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 shadow-lg bg-white">
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <!-- Logo and Title -->
+        <div class="text-2xl flex items-center">
+          <img
+            src="Images/logo.png"
+            alt="Ghana Paediatric Surgeons Logo"
+            class="h-16 mr-2"
+          />
+          <div class="flex flex-col md:flex-row f text-[#0F2144] text-[24px]">
+            <div
+              class="font-bold"
+              style="font-family: 'Montserrat', sans-serif"
+            >
+              <p>Ghana Association of <br />Paediatric Surgeons</p>
+            </div>
+            <div
+              class="text-[30px] flex justify-center items-center text-red-400"
+            >
+              <p>(GAPS)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-[20px] mr-[-100px] lg:mr-[-250px]">
+          <button
+            class="hidden md:block border bg-[#0F2144] text-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
+            style="font-family: 'Montserrat', sans-serif"
+          >
+            <a href="" class="block hover:text-red-400"> register</a>
+          </button>
+          <button
+            class="hidden lg:block border-[2px] border-[#3B888E] px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
+            style="font-family: 'Montserrat', sans-serif"
+          >
+            <a href="" class="block hover:text-red-400">Login</a>
+          </button>
+        </div>
+
+        <!-- Hamburger Menu (Always Visible) -->
+        <button class="text-[#3B888E]" id="menu-btn">
+          <svg
+            class="w-8 h-8"
+            fill="none"
+            stroke="#0F2144"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+          <p class="text-[12px] font-bold text-[#0F2144]">Menu</p>
+        </button>
+      </div>
+
+      <!-- Menu Links (Initially Hidden) -->
+      <ul
+        id="menu"
+        class="hidden fixed top-16 left-0 w-full bg-white text-cyan-600 text-lg font-semibold space-y-2 p-4 shadow-lg"
+      >
+        <li>
+          <a href="index.html" class="block px-4 py-2 hover:text-red-400"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="about.html" class="block px-4 py-2 hover:text-red-400"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="registries.html" class="block px-4 py-2 hover:text-red-400"
+            >National Registry</a
+          >
+        </li>
+        <li>
+          <a href="heroes.html" class="block px-4 py-2 hover:text-red-400"
+            >Our Heroes</a
+          >
+        </li>
+        <li>
+          <a href="research.html" class="block px-4 py-2 hover:text-red-400"
+            >Research</a
+          >
+        </li>
+        <li>
+          <a href="newsevents.html" class="block px-4 py-2 hover:text-red-400"
+            >News & Events</a
+          >
+        </li>
+        <li>
+          <a href="members.html" class="block px-4 py-2 hover:text-red-400"
+            >Members</a
+          >
+        </li>
+        <li>
+          <a href="contact.html" class="block px-4 py-2 hover:text-red-400"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Placeholder -->
+    <section
+      class="mt-16 flex flex-col items-center justify-center bg-gradient-to-r from-[#234558] via-[#2B5B65] to-[#3A7B80] text-white w-full h-full pt-[30px]"
+    >
+      <h1
+        class="text-center text-3xl font-bold text-[40px] tracking-wide leading-[50px] mt-[50px]"
+        style="font-family: 'Montserrat', sans-serif"
+      >
+        Welcome to the Ghana Association of Paediatric Surgeons
+      </h1>
+
+      <div class="my-[50px] flex flex-col items-center justify-center">
+        <div class="flex gap-[20px]">
+          <button
+            class="md:hidden border-[3px] bg-[#037383] text-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
+            style="font-family: 'Montserrat', sans-serif"
+          >
+            <a href="" class="block hover:text-red-400">Register</a>
+          </button>
+          <button
+            class="md:hidden border-[2px] border-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px] bg-[#0F2144]"
+            style="font-family: 'Montserrat', sans-serif"
+          >
+            <a href="" class="block hover:text-red-400">Login</a>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="registry" class="bg-[#FFEDDB] py-16">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-[#8E4B3B]">National Registry</h2>
+        <p class="mt-4 text-lg text-gray-700 px-[30px]">
+          Our national registry helps us collect valuable data all over Ghana on
+          a variety of conditions. This is to help make research data more
+          available and accessible to members of GAPS.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 mx-4">
+          <!-- Colorectal -->
+          <div
+            class="bg-gradient-to-br from-[#234558] to-[#3A7B80] p-4 rounded-lg shadow-lg text-white text-center hover:scale-105 transition-transform duration-300 cursor-pointer"
+            onclick="window.open('colorectal.html', '_blank')"
+          >
+            Colorectal
+          </div>
+
+          <!-- Hepatobiliary -->
+          <div
+            class="bg-gradient-to-br from-[#037383] to-[#55A2A3] p-4 rounded-lg shadow-lg text-white text-center hover:scale-105 transition-transform duration-300"
+          >
+            Hepatobiliary
+          </div>
+
+          <!-- Genitourinary -->
+          <div
+            class="bg-gradient-to-br from-red-400 to-[#FF8A65] p-4 rounded-lg shadow-lg text-white text-center hover:scale-105 transition-transform duration-300"
+          >
+            Genitourinary
+          </div>
+
+          <!-- Hernias -->
+          <div
+            class="bg-gradient-to-br from-[#0F2144] to-[#1D4D72] p-4 rounded-lg shadow-lg text-white text-center hover:scale-105 transition-transform duration-300"
+          >
+            Hernias
+          </div>
+
+          <!-- Neonatal -->
+          <div
+            class="bg-gradient-to-br from-[#FFEDDB] to-[#FFA891] p-4 rounded-lg shadow-lg text-[#8E4B3B] text-center hover:scale-105 transition-transform duration-300"
+          >
+            Neonatal
+          </div>
+
+          <!-- Tumours -->
+          <div
+            class="bg-gradient-to-br from-[#3B888E] to-[#55A2A3] p-4 rounded-lg shadow-lg text-white text-center hover:scale-105 transition-transform duration-300"
+          >
+            Tumours
+          </div>
+
+          <!-- Trauma -->
+          <div
+            class="bg-gradient-to-br from-[#8E4B3B] to-[#F0C0B0] p-4 rounded-lg shadow-lg text-white text-center hover:scale-105 transition-transform duration-300"
+          >
+            Trauma
+          </div>
+
+          <!-- Others -->
+          <div
+            class="bg-gradient-to-br from-[#F6A7A8] to-[#FFD5D5] p-4 rounded-lg shadow-lg text-[#8E4B3B] text-center hover:scale-105 transition-transform duration-300"
+          >
+            Others
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#0F2144] text-white py-4 text-center">
+      <p>
+        &copy; 2024 Ghana Association of Paediatric Surgeons. All rights
+        reserved.
+      </p>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
