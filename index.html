@@ -9,6 +9,37 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Open registration form in a new tab
+      function openRegistration() {
+        window.open("register.html", "_blank");
+      }
+
+      // Function to handle registration securely
+      function handleRegistration(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match!");
+          return;
+        }
+
+        // Use a basic hash function for demo purposes (for real-world use, hashing should be done server-side using bcrypt, Argon2, or similar)
+        const hashedPassword = btoa(password); // Use a better hash function in production
+
+        // Send registration details securely (e.g., using fetch or AJAX to backend server)
+        console.log("Username: ", username);
+        console.log("Hashed Password: ", hashedPassword);
+
+        // After registration, redirect to a login page or profile creation
+        window.location.href = "profile.html";
+      }
+    </script>
   </head>
   <body class="text-gray-900">
     <!-- Navbar -->
@@ -39,9 +70,10 @@
         <div class="flex gap-[20px] mr-[-100px] lg:mr-[-250px]">
           <button
             class="hidden md:block border bg-[#0F2144] text-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
+            onclick="openRegistration()"
             style="font-family: 'Montserrat', sans-serif"
           >
-            <a href="" class="block hover:text-red-400"> register</a>
+            register
           </button>
           <button
             class="hidden lg:block border-[2px] border-[#3B888E] px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
@@ -134,15 +166,41 @@
         <div class="flex gap-[20px]">
           <button
             class="md:hidden border-[3px] bg-[#037383] text-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
+            onclick="openRegistration()"
             style="font-family: 'Montserrat', sans-serif"
           >
-            <a href="" class="block hover:text-red-400">Register</a>
+            Register
           </button>
           <button
             class="md:hidden border-[2px] border-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px] bg-[#0F2144]"
             style="font-family: 'Montserrat', sans-serif"
           >
             <a href="" class="block hover:text-red-400">Login</a>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="text-center">
+      <div class="relative w-full max-w-lg mx-auto">
+        <img
+          id="carousel-image"
+          src="Images/hesse1.jpg"
+          alt="Gallery"
+          class="w-full h-auto rounded-lg"
+        />
+        <div class="absolute inset-0 flex items-center justify-between">
+          <button
+            onclick="prevImage()"
+            class="bg-white rounded-full p-2 shadow-lg"
+          >
+            ❮
+          </button>
+          <button
+            onclick="nextImage()"
+            class="bg-white rounded-full p-2 shadow-lg"
+          >
+            ❯
           </button>
         </div>
       </div>
@@ -231,6 +289,34 @@
       menuBtn.addEventListener("click", () => {
         menu.classList.toggle("hidden");
       });
+      let currentIndex = 0;
+      const images = [
+        "Images/nimako.webp",
+        "Images/party.jpg",
+
+        "Images/abantanga.jpg",
+        "Images/hesse1.jpg",
+
+        // Add more image paths as necessary
+      ];
+
+      function showImage(index) {
+        const imgElement = document.getElementById("carousel-image");
+        imgElement.src = images[index];
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      }
+
+      // Automatic image transition
+      setInterval(nextImage, 3000);
     </script>
   </body>
 </html>

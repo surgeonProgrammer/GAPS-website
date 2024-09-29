@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAPS Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="min-h-screen bg-cover bg-center"
+    style="background-image: url('Images/background.jpg')"
+  >
+    <nav
+      class="flex justify-end items-center p-4 mr-[120px] md:mr-[250px] lg:mr-[400px]"
+    >
+      <div class="flex gap-[20px] mr-[-100px] lg:mr-[-250px]">
+        <button
+          class="border bg-[#0F2144] text-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
+          style="font-family: 'Montserrat', sans-serif"
+        >
+          <a href="index.html" class="block hover:text-red-400">Home</a>
+        </button>
+        <button
+          class="border-[2px] border-[#3B888E] px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
+          style="font-family: 'Montserrat', sans-serif"
+        >
+          <a href="research.html" class="block hover:text-red-400">Login</a>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="text-center mt-10">
+      <h1 class="text-3xl text-cyan-700 font-bold">GAPS Registration</h1>
+    </header>
+
+    <!-- Registration Form -->
+    <div
+      class="w-full max-w-lg p-8 mt-10 rounded-lg bg-white/30 backdrop-blur-md shadow-lg mx-auto border-t-4 border-red-300"
+    >
+      <h2 class="text-3xl text-center font-bold text-cyan-700 mb-8">
+        Create Your Profile
+      </h2>
+
+      <form onsubmit="handleRegistration(event)">
+        <!-- First Name -->
+        <div class="mb-6">
+          <input
+            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
+            id="firstName"
+            type="text"
+            placeholder="First Name"
+            required
+          />
+        </div>
+
+        <!-- Last Name -->
+        <div class="mb-6">
+          <input
+            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
+            id="lastName"
+            type="text"
+            placeholder="Last Name"
+            required
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="mb-6">
+          <input
+            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
+            id="email"
+            type="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+
+        <!-- Birthday -->
+        <div class="mb-6 px-4">
+          <label
+            for="birthday"
+            class="block text-gray-400 mb-2"
+            style="font-family: 'Montserrat', sans-serif"
+            >Date of Birth</label
+          >
+          <input
+            class="w-full py-2 px-2 bg-transparent border-b-2 border-cyan-500 text-gray-400 focus:outline-none focus:border-cyan-400"
+            id="birthday"
+            type="date"
+            placeholder="Birthday"
+            required
+          />
+        </div>
+
+        <!-- Sex Dropdown -->
+        <div class="mb-6">
+          <select
+            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-gray-400 focus:outline-none focus:border-cyan-400"
+            id="sex"
+            required
+          >
+            <option value="" disabled selected class="text-black">Sex</option>
+            <option value="male" class="text-black">Male</option>
+            <option value="female" class="text-black">Female</option>
+          </select>
+        </div>
+
+        <!-- Name of Facility -->
+        <div class="mb-6">
+          <input
+            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
+            id="facility"
+            type="text"
+            placeholder="Facility Name"
+            required
+          />
+        </div>
+
+        <!-- Subspecialty/Interest -->
+        <div class="mb-6">
+          <input
+            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
+            id="subspecialty"
+            type="text"
+            placeholder="Subspecialty or Interest"
+            required
+          />
+        </div>
+
+        <!-- Username -->
+        <div class="mb-6">
+          <input
+            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
+            id="username"
+            type="text"
+            placeholder="Username"
+            required
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="mb-6">
+          <input
+            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text- black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
+            id="password"
+            type="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="mb-6">
+          <input
+            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
+            id="confirmPassword"
+            type="password"
+            placeholder="Confirm Password"
+            required
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex items-center justify-center">
+          <button
+            class="bg-red-300 hover:bg-cyan-500 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="submit"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-cyan-700 text-white py-4 text-center mt-16">
+      <p>
+        &copy; 2024 Ghana Association of Paediatric Surgeons. All rights
+        reserved.
+      </p>
+    </footer>
+
+    <script>
+      function handleRegistration(event) {
+        event.preventDefault();
+        alert("Form submitted!");
+      }
+    </script>
+  </body>
+</html>
