@@ -1,174 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ghana Association of Paediatric Surgeons(GAPS)</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Members — Ghana Association of Paediatric Surgeons</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <style>body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}</style>
   </head>
-  <body class="text-gray-900">
-    <!-- Navbar -->
-    <nav class="fixed w-full top-0 z-50 shadow-lg bg-white">
-      <div class="container mx-auto flex justify-between items-center p-4">
-        <!-- Logo and Title -->
-        <div class="text-2xl flex items-center">
-          <img
-            src="Images/logo.png"
-            alt="Ghana Paediatric Surgeons Logo"
-            class="h-16 mr-2"
-          />
-          <div class="flex flex-col md:flex-row text-[#3B888E] text-[20px]">
-            <div
-              class="font-bold"
-              style="font-family: 'Montserrat', sans-serif"
-            >
-              <p>Ghana Association of <br />Paediatric Surgeons</p>
-            </div>
-            <div
-              class="text-[30px] flex justify-center items-center text-red-400"
-            >
-              <p>(GAPS)</p>
-            </div>
-          </div>
+  <body class="bg-white text-gray-900">
+    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur z-50 border-b">
+      <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+        <a href="index.html" class="flex items-center gap-4"><img src="Images/logo.png" alt="GAPS logo" class="h-12 w-12" /><div><div class="font-bold text-[#0F2144]">Ghana Association of</div><div class="text-xs text-[#3B888E]">Paediatric Surgeons</div></div></a>
+        <nav class="hidden lg:flex items-center gap-5 text-sm font-medium"><a href="index.html">Home</a><a href="about.html">About</a><div class="relative"><button type="button" data-dropdown-toggle="resources" aria-expanded="false" class="flex items-center gap-1">Resources <span>▾</span></button><div data-dropdown-menu="resources" class="hidden absolute top-full left-0 mt-2 w-56 bg-white border rounded-xl shadow-lg p-2 z-50"><a href="research.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Research</a><a href="newsevents.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">News & Events</a><a href="learning.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Learning Resources</a></div></div><div class="relative"><button type="button" data-dropdown-toggle="engage" aria-expanded="false" class="flex items-center gap-1">Engage <span>▾</span></button><div data-dropdown-menu="engage" class="hidden absolute top-full left-0 mt-2 w-56 bg-white border rounded-xl shadow-lg p-2 z-50"><a href="index.html#donate" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Donate</a><a href="index.html#collaborate" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Collaborate</a><a href="executive.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Executive Body</a><a href="members.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50 font-semibold">Members</a><a href="register.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Join GAPS</a></div></div><a href="contact.html">Contact</a></nav>
+        <button id="menu-btn" class="lg:hidden p-2 rounded hover:bg-gray-100"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg></button>
+      </div>
+      <div id="mobile-menu" class="hidden lg:hidden border-t p-4 space-y-2 text-sm">
+        <a href="index.html" class="block">Home</a><a href="about.html" class="block">About</a><a href="research.html" class="block">Research</a><a href="newsevents.html" class="block">News</a><a href="learning.html" class="block">Learning Resources</a><a href="index.html#donate" class="block">Donate</a><a href="index.html#collaborate" class="block">Collaborate</a><a href="executive.html" class="block">Executive Body</a><a href="members.html" class="block">Members</a><a href="register.html" class="block">Join GAPS</a><a href="contact.html" class="block">Contact</a>
+      </div>
+    </header>
+
+    <main class="pt-28 max-w-6xl mx-auto px-6 py-12">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h1 class="text-4xl font-bold text-[#0F2144]">Membership</h1>
+          <p class="mt-3 text-gray-700">Join a network of paediatric surgeons committed to better outcomes for children in Ghana.</p>
         </div>
-
-        <div class='flex gap-[20px] mr-[-100px] lg:mr-[-250px]'>
-          <button
-          class="hidden md:block border bg-[#0F2144] text-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
-          style="font-family: 'Montserrat', sans-serif"
-        >
-        <a href="registries.html" class="block  hover:text-red-400"
-        >National Registry</a
-        </button>
-
-        <button
-        class="hidden lg:block border-[2px] border-[#3B888E] px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
-        style="font-family: 'Montserrat', sans-serif"
-      >
-      <a href="research.html" class="block  hover:text-red-400"
-      >Research</a
-      </button>
-        </div>
-       
-
-        <!-- Hamburger Menu (Always Visible) -->
-        <button class="text-[#3B888E]" id="menu-btn">
-          <svg
-            class="w-8 h-8"
-            fill="none"
-            stroke="#3B888E"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-          <p class='text-[12px] font-bold'>Menu</p>
-        </button>
+        <a href="register.html" class="bg-[#0F2144] text-white px-5 py-3 rounded-full text-sm font-semibold">Apply for Membership</a>
       </div>
 
-      <!-- Menu Links (Initially Hidden) -->
-      <ul
-        id="menu"
-        class="hidden fixed top-16 left-0 w-full bg-white text-cyan-600 text-lg font-semibold space-y-2 p-4 shadow-lg"
-      >
-        <li>
-          <a href="index.html" class="block px-4 py-2 hover:text-red-400"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a href="about.html" class="block px-4 py-2 hover:text-red-400"
-            >About</a
-          >
-        </li>
-        <li>
-          <a href="registries.html" class="block px-4 py-2 hover:text-red-400"
-            >National Registry</a
-          >
-        </li>
-        <li>
-          <a href="heroes.html" class="block px-4 py-2 hover:text-red-400"
-            >Our Heroes</a
-          >
-        </li>
-        <li>
-          <a href="research.html" class="block px-4 py-2 hover:text-red-400"
-            >Research</a
-          >
-        </li>
-        <li>
-          <a href="newsevents.html" class="block px-4 py-2 hover:text-red-400"
-            >News & Events</a
-          >
-        </li>
-        <li>
-          <a href="members.html" class="block px-4 py-2 hover:text-red-400"
-            >Members</a
-          >
-        </li>
-        <li>
-          <a href="contact.html" class="block px-4 py-2 hover:text-red-400"
-            >Contact Us</a
-          >
-        </li>
-      </ul>
-    </nav>
+      <section class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+        <article class="p-6 border rounded-xl"><h3 class="font-semibold">Full Members</h3><p class="mt-2 text-sm text-gray-600">Consultant paediatric surgeons practicing in Ghana and internationally.</p></article>
+        <article class="p-6 border rounded-xl"><h3 class="font-semibold">Associate Members</h3><p class="mt-2 text-sm text-gray-600">Professionals collaborating with paediatric surgery and child health services.</p></article>
+        <article class="p-6 border rounded-xl"><h3 class="font-semibold">Trainee Members</h3><p class="mt-2 text-sm text-gray-600">Residents and fellows in paediatric surgical training programmes.</p></article>
+      </section>
 
-    
-    
-    <!-- Main Content Placeholder -->
+      <section class="mt-10 bg-gray-50 p-6 rounded-xl border shadow-sm">
+        <h2 class="text-2xl font-bold">Member benefits</h2>
+        <ul class="mt-4 list-disc pl-5 text-gray-700 space-y-2">
+          <li>Access to national mentorship and peer collaboration.</li>
+          <li>Priority access to workshops and annual scientific meetings.</li>
+          <li>Participation in multicentre research and publications.</li>
+        </ul>
+      </section>
+    </main>
 
-      <section class="mt-[140px] flex flex-col items-center justify-center py-[40px] bg-[#117997] text-white w-full h-full">
-        
-      <h1 class="text-center text-3xl font-bold ">
-        Welcome to the Ghana Association for Paediatric Surgeons
-      </h1>
-
-      <div class="mt-24 flex flex-col items-center justify-center">
-        <div class='flex gap-[20px]'>
-          <button
-          class=" md:hidden border bg-[#0F2144] text-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
-          style="font-family: 'Montserrat', sans-serif"
-        >
-        <a href="registries.html" class="block  hover:text-red-400"
-        >National Registry</a
-        </button>
-  
-        <button
-        class=" md:hidden border-[2px] border-[#3B888E] px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
-        style="font-family: 'Montserrat', sans-serif"
-      >
-      <a href="research.html" class="block  hover:text-red-400"
-      >Research</a
-      </button>
-       
-
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-cyan-500 text-white text-center p-4 mt-16">
-      <p>
-        &copy; 2024 Ghana Association for Paediatric Surgeons. All rights
-        reserved.
-      </p>
-    </footer>
-
-    <!-- JavaScript to Toggle Menu -->
+    <footer class="bg-[#0F2144] text-white mt-12"><div class="max-w-6xl mx-auto p-8 text-sm">&copy; 2026 Ghana Association of Paediatric Surgeons.</div></footer>
     <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const menu = document.getElementById("menu");
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-      menuBtn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
+      const dropdownButtons = document.querySelectorAll('[data-dropdown-toggle]');
+      function closeDropdowns() {
+        dropdownButtons.forEach((button) => {
+          const menuName = button.getAttribute('data-dropdown-toggle');
+          const dropdown = document.querySelector(`[data-dropdown-menu="${menuName}"]`);
+          if (dropdown) dropdown.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      dropdownButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+          event.stopPropagation();
+          const menuName = button.getAttribute('data-dropdown-toggle');
+          const dropdown = document.querySelector(`[data-dropdown-menu="${menuName}"]`);
+          if (!dropdown) return;
+          const isClosed = dropdown.classList.contains('hidden');
+          closeDropdowns();
+          if (isClosed) {
+            dropdown.classList.remove('hidden');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      document.addEventListener('click', () => closeDropdowns());
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeDropdowns();
       });
     </script>
   </body>

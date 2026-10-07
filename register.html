@@ -1,191 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GAPS Registration</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Join GAPS — Membership Application</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <style>body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}</style>
   </head>
-  <body
-    class="min-h-screen bg-cover bg-center"
-    style="background-image: url('Images/background.jpg')"
-  >
-    <nav
-      class="flex justify-end items-center p-4 mr-[120px] md:mr-[250px] lg:mr-[400px]"
-    >
-      <div class="flex gap-[20px] mr-[-100px] lg:mr-[-250px]">
-        <button
-          class="border bg-[#0F2144] text-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
-          style="font-family: 'Montserrat', sans-serif"
-        >
-          <a href="index.html" class="block hover:text-red-400">Home</a>
-        </button>
-        <button
-          class="border-[2px] border-[#3B888E] px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
-          style="font-family: 'Montserrat', sans-serif"
-        >
-          <a href="research.html" class="block hover:text-red-400">Login</a>
-        </button>
+  <body class="bg-gray-50 text-gray-900">
+    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur z-50 border-b">
+      <div class="max-w-6xl mx-auto p-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-3"><img src="Images/logo.png" alt="GAPS logo" class="h-10 w-10" /><span class="font-semibold text-[#0F2144]">GAPS Membership</span></a>
+        <nav class="hidden lg:flex items-center gap-5 text-sm font-medium"><a href="index.html">Home</a><a href="about.html">About</a><div class="relative"><button type="button" data-dropdown-toggle="resources" aria-expanded="false" class="flex items-center gap-1">Resources <span>▾</span></button><div data-dropdown-menu="resources" class="hidden absolute top-full left-0 mt-2 w-56 bg-white border rounded-xl shadow-lg p-2 z-50"><a href="research.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Research</a><a href="newsevents.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">News & Events</a><a href="learning.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Learning Resources</a></div></div><div class="relative"><button type="button" data-dropdown-toggle="engage" aria-expanded="false" class="flex items-center gap-1">Engage <span>▾</span></button><div data-dropdown-menu="engage" class="hidden absolute top-full left-0 mt-2 w-56 bg-white border rounded-xl shadow-lg p-2 z-50"><a href="index.html#donate" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Donate</a><a href="index.html#collaborate" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Collaborate</a><a href="executive.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Executive Body</a><a href="members.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Members</a><a href="register.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50 font-semibold">Join GAPS</a></div></div><a href="contact.html">Contact</a></nav>
+        <button id="menu-btn" class="lg:hidden p-2 rounded hover:bg-gray-100"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg></button>
       </div>
-    </nav>
-
-    <!-- Header Section -->
-    <header class="text-center mt-10">
-      <h1 class="text-3xl text-cyan-700 font-bold">GAPS Registration</h1>
+      <div id="mobile-menu" class="hidden lg:hidden border-t p-4 space-y-2 text-sm bg-white">
+        <a href="index.html" class="block">Home</a><a href="about.html" class="block">About</a><a href="research.html" class="block">Research</a><a href="newsevents.html" class="block">News</a><a href="learning.html" class="block">Learning Resources</a><a href="index.html#donate" class="block">Donate</a><a href="index.html#collaborate" class="block">Collaborate</a><a href="executive.html" class="block">Executive Body</a><a href="members.html" class="block">Members</a><a href="register.html" class="block">Join GAPS</a><a href="contact.html" class="block">Contact</a>
+      </div>
     </header>
 
-    <!-- Registration Form -->
-    <div
-      class="w-full max-w-lg p-8 mt-10 rounded-lg bg-white/30 backdrop-blur-md shadow-lg mx-auto border-t-4 border-red-300"
-    >
-      <h2 class="text-3xl text-center font-bold text-cyan-700 mb-8">
-        Create Your Profile
-      </h2>
+    <main class="max-w-4xl mx-auto px-6 py-10 pt-28">
+      <section class="bg-white border rounded-2xl p-8 shadow-sm">
+        <h1 class="text-3xl font-bold text-[#0F2144]">Membership Application</h1>
+        <p class="mt-2 text-gray-600">Submit your details and the GAPS membership team will contact you.</p>
+        <p class="mt-2 text-sm text-gray-500">For all submissions and correspondence: <a class="underline" href="mailto:gapsghana.gh@gmail.com">gapsghana.gh@gmail.com</a></p>
 
-      <form onsubmit="handleRegistration(event)">
-        <!-- First Name -->
-        <div class="mb-6">
-          <input
-            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
-            id="firstName"
-            type="text"
-            placeholder="First Name"
-            required
-          />
-        </div>
+        <form id="member-form" class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input name="firstName" required class="p-3 border rounded-lg" placeholder="First name" />
+          <input name="lastName" required class="p-3 border rounded-lg" placeholder="Last name" />
+          <input name="email" type="email" required class="p-3 border rounded-lg md:col-span-2" placeholder="Email" />
+          <input name="phone" class="p-3 border rounded-lg" placeholder="Phone" />
+          <input name="facility" required class="p-3 border rounded-lg" placeholder="Facility / Hospital" />
+          <input name="specialty" required class="p-3 border rounded-lg md:col-span-2" placeholder="Subspecialty or interest" />
+          <textarea name="message" rows="4" class="p-3 border rounded-lg md:col-span-2" placeholder="Optional note"></textarea>
+          <div class="md:col-span-2 flex items-center gap-4">
+            <button type="submit" class="bg-[#0F2144] text-white px-6 py-3 rounded-full font-semibold">Submit application</button>
+            <span id="status" class="text-sm text-gray-600"></span>
+          </div>
+        </form>
+        <p class="mt-4 text-xs text-gray-500">If the online form is unavailable, send your details to <a class="underline" href="mailto:gapsghana.gh@gmail.com">gapsghana.gh@gmail.com</a>.</p>
+      </section>
+    </main>
 
-        <!-- Last Name -->
-        <div class="mb-6">
-          <input
-            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
-            id="lastName"
-            type="text"
-            placeholder="Last Name"
-            required
-          />
-        </div>
-
-        <!-- Email -->
-        <div class="mb-6">
-          <input
-            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
-            id="email"
-            type="email"
-            placeholder="Email"
-            required
-          />
-        </div>
-
-        <!-- Birthday -->
-        <div class="mb-6 px-4">
-          <label
-            for="birthday"
-            class="block text-gray-400 mb-2"
-            style="font-family: 'Montserrat', sans-serif"
-            >Date of Birth</label
-          >
-          <input
-            class="w-full py-2 px-2 bg-transparent border-b-2 border-cyan-500 text-gray-400 focus:outline-none focus:border-cyan-400"
-            id="birthday"
-            type="date"
-            placeholder="Birthday"
-            required
-          />
-        </div>
-
-        <!-- Sex Dropdown -->
-        <div class="mb-6">
-          <select
-            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-gray-400 focus:outline-none focus:border-cyan-400"
-            id="sex"
-            required
-          >
-            <option value="" disabled selected class="text-black">Sex</option>
-            <option value="male" class="text-black">Male</option>
-            <option value="female" class="text-black">Female</option>
-          </select>
-        </div>
-
-        <!-- Name of Facility -->
-        <div class="mb-6">
-          <input
-            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
-            id="facility"
-            type="text"
-            placeholder="Facility Name"
-            required
-          />
-        </div>
-
-        <!-- Subspecialty/Interest -->
-        <div class="mb-6">
-          <input
-            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
-            id="subspecialty"
-            type="text"
-            placeholder="Subspecialty or Interest"
-            required
-          />
-        </div>
-
-        <!-- Username -->
-        <div class="mb-6">
-          <input
-            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
-            id="username"
-            type="text"
-            placeholder="Username"
-            required
-          />
-        </div>
-
-        <!-- Password -->
-        <div class="mb-6">
-          <input
-            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text- black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
-            id="password"
-            type="password"
-            placeholder="Password"
-            required
-          />
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="mb-6">
-          <input
-            class="w-full py-2 px-4 bg-transparent border-b-2 border-cyan-500 text-black placeholder-gray-400 focus:outline-none focus:border-cyan-400"
-            id="confirmPassword"
-            type="password"
-            placeholder="Confirm Password"
-            required
-          />
-        </div>
-
-        <!-- Submit Button -->
-        <div class="flex items-center justify-center">
-          <button
-            class="bg-red-300 hover:bg-cyan-500 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
-            type="submit"
-          >
-            Register
-          </button>
-        </div>
-      </form>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-cyan-700 text-white py-4 text-center mt-16">
-      <p>
-        &copy; 2024 Ghana Association of Paediatric Surgeons. All rights
-        reserved.
-      </p>
-    </footer>
+    <footer class="text-center text-sm text-gray-500 py-6">&copy; 2026 Ghana Association of Paediatric Surgeons.</footer>
 
     <script>
-      function handleRegistration(event) {
-        event.preventDefault();
-        alert("Form submitted!");
+      const RECEIVER_EMAIL = 'gapsghana.gh@gmail.com';
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+      const dropdownButtons = document.querySelectorAll('[data-dropdown-toggle]');
+      function closeDropdowns() {
+        dropdownButtons.forEach((button) => {
+          const menuName = button.getAttribute('data-dropdown-toggle');
+          const dropdown = document.querySelector(`[data-dropdown-menu="${menuName}"]`);
+          if (dropdown) dropdown.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+        });
       }
+
+      dropdownButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+          event.stopPropagation();
+          const menuName = button.getAttribute('data-dropdown-toggle');
+          const dropdown = document.querySelector(`[data-dropdown-menu="${menuName}"]`);
+          if (!dropdown) return;
+          const isClosed = dropdown.classList.contains('hidden');
+          closeDropdowns();
+          if (isClosed) {
+            dropdown.classList.remove('hidden');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      document.addEventListener('click', () => closeDropdowns());
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeDropdowns();
+      });
+
+      const form = document.getElementById('member-form');
+      const status = document.getElementById('status');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-60', 'cursor-not-allowed');
+        status.textContent = 'Preparing email...';
+        const payload = Object.fromEntries(new FormData(form).entries());
+
+        const subject = `GAPS Membership Application: ${payload.firstName || ''} ${payload.lastName || ''}`.trim();
+        const body = [
+          'A new membership application was submitted on the GAPS website.',
+          '',
+          `First name: ${payload.firstName || ''}`,
+          `Last name: ${payload.lastName || ''}`,
+          `Email: ${payload.email || ''}`,
+          `Phone: ${payload.phone || ''}`,
+          `Facility / Hospital: ${payload.facility || ''}`,
+          `Subspecialty / Interest: ${payload.specialty || ''}`,
+          '',
+          'Message:',
+          payload.message || ''
+        ].join('\n');
+
+        const mailto = `mailto:${RECEIVER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        try {
+          window.location.href = mailto;
+          status.textContent = 'Your email app has been opened. Please send the application there.';
+          form.reset();
+        } catch (error) {
+          console.error(error);
+          status.textContent = 'Could not open email app. Please email gapsghana.gh@gmail.com directly.';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('opacity-60', 'cursor-not-allowed');
+        }
+      });
     </script>
   </body>
 </html>

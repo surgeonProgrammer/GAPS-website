@@ -1,322 +1,443 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ghana Association of Paediatric Surgeons(GAPS)</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ghana Association of Paediatric Surgeons — GAPS</title>
+    <meta name="description" content="Ghana Association of Paediatric Surgeons — research, education, advocacy and fellowship." />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <script>
-      // Open registration form in a new tab
-      function openRegistration() {
-        window.open("register.html", "_blank");
-      }
-
-      // Function to handle registration securely
-      function handleRegistration(event) {
-        event.preventDefault();
-
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-        const confirmPassword =
-          document.getElementById("confirmPassword").value;
-
-        if (password !== confirmPassword) {
-          alert("Passwords do not match!");
-          return;
-        }
-
-        // Use a basic hash function for demo purposes (for real-world use, hashing should be done server-side using bcrypt, Argon2, or similar)
-        const hashedPassword = btoa(password); // Use a better hash function in production
-
-        // Send registration details securely (e.g., using fetch or AJAX to backend server)
-        console.log("Username: ", username);
-        console.log("Hashed Password: ", hashedPassword);
-
-        // After registration, redirect to a login page or profile creation
-        window.location.href = "profile.html";
-      }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <style>body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}</style>
   </head>
-  <body class="text-gray-900">
-    <!-- Navbar -->
-    <nav class="fixed w-full top-0 z-50 shadow-lg bg-white">
-      <div class="container mx-auto flex justify-between items-center p-4">
-        <!-- Logo and Title -->
-        <div class="text-2xl flex items-center">
-          <img
-            src="Images/logo.png"
-            alt="Ghana Paediatric Surgeons Logo"
-            class="h-16 mr-2"
-          />
-          <div class="flex flex-col md:flex-row text-[#0F2144] text-[20px]">
-            <div
-              class="font-bold"
-              style="font-family: 'Montserrat', sans-serif"
-            >
-              <p>Ghana Association of <br />Paediatric Surgeons</p>
+  <body class="bg-white text-gray-900 antialiased">
+    <!-- Header / Nav -->
+    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur z-50 border-b">
+      <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+        <a href="index.html" class="flex items-center gap-4">
+          <img src="Images/logo.png" alt="GAPS logo" class="h-14 w-14 object-contain rounded" />
+          <div>
+            <div class="text-lg font-bold text-[#0F2144]">Ghana Association of</div>
+            <div class="text-sm text-[#3B888E]">Paediatric Surgeons (GAPS)</div>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-5 text-sm font-medium">
+          <a href="index.html" class="hover:text-[#0F2144]">Home</a>
+          <a href="about.html" class="hover:text-[#0F2144]">About</a>
+
+          <div class="relative">
+            <button type="button" data-dropdown-toggle="resources" aria-expanded="false" class="flex items-center gap-1 hover:text-[#0F2144]">
+              Resources
+              <span>▾</span>
+            </button>
+            <div data-dropdown-menu="resources" class="hidden absolute top-full left-0 mt-2 w-56 bg-white border rounded-xl shadow-lg p-2 z-50">
+              <a href="research.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Research</a>
+              <a href="newsevents.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">News & Events</a>
+              <a href="learning.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Learning Resources</a>
             </div>
-            <div
-              class="text-[30px] flex justify-center items-center text-red-400"
-            >
-              <p>(GAPS)</p>
+          </div>
+
+          <div class="relative">
+            <button type="button" data-dropdown-toggle="engage" aria-expanded="false" class="flex items-center gap-1 hover:text-[#0F2144]">
+              Engage
+              <span>▾</span>
+            </button>
+            <div data-dropdown-menu="engage" class="hidden absolute top-full left-0 mt-2 w-56 bg-white border rounded-xl shadow-lg p-2 z-50">
+              <a href="index.html#donate" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Donate</a>
+              <a href="index.html#collaborate" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Collaborate</a>
+              <a href="executive.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Executive Body</a>
+              <a href="members.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Members</a>
+              <a href="register.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Join GAPS</a>
+            </div>
+          </div>
+
+          <a href="contact.html" class="hover:text-[#0F2144]">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="register.html" class="hidden xl:inline-block bg-[#0F2144] text-white px-4 py-2 rounded-full text-sm shadow">Join GAPS</a>
+          <button id="menu-btn" class="lg:hidden p-2 rounded hover:bg-gray-100">
+            <svg class="w-6 h-6 text-[#0F2144]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden border-t">
+        <div class="p-4 flex flex-col gap-3">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="newsevents.html">News & Events</a>
+          <a href="learning.html">Learning Resources</a>
+          <a href="#donate">Donate</a>
+          <a href="#collaborate">Collaborate</a>
+          <a href="executive.html">Executive Body</a>
+          <a href="members.html">Members</a>
+          <a href="register.html">Join GAPS</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-28">
+      <!-- Hero -->
+      <section class="bg-gradient-to-r from-[#0F2144] via-[#2B5B65] to-[#3A7B80] text-white">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-20 px-6">
+          <div>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Excellence in paediatric surgery across Ghana</h1>
+            <p class="mt-4 text-lg text-cyan-100 max-w-xl">Promoting research, training and collaboration to improve surgical care for children nationwide through innovation, mentorship and shared standards.</p>
+            <div class="mt-8 flex gap-3">
+              <a href="register.html" class="bg-white text-[#0F2144] font-semibold px-5 py-3 rounded-full shadow">Become a Member</a>
+              <a href="newsevents.html" class="border border-white text-white px-5 py-3 rounded-full">Events & News</a>
+            </div>
+            <div class="mt-8 grid grid-cols-3 gap-3 max-w-md">
+              <div class="bg-white/15 border border-white/20 rounded-lg p-3 text-center">
+                <p class="text-2xl font-bold">7+</p>
+                <p class="text-xs text-cyan-100">Institutions</p>
+              </div>
+              <div class="bg-white/15 border border-white/20 rounded-lg p-3 text-center">
+                <p class="text-2xl font-bold">20+</p>
+                <p class="text-xs text-cyan-100">Members & Trainees</p>
+              </div>
+              <div class="bg-white/15 border border-white/20 rounded-lg p-3 text-center">
+                <p class="text-2xl font-bold">24/7</p>
+                <p class="text-xs text-cyan-100">Child Surgical Advocacy</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <div class="relative w-full max-w-xl">
+              <img id="hero-carousel-image" src="Images/2026 conference.jpeg" alt="GAPS event" class="rounded-xl shadow-2xl w-full h-[360px] md:h-[430px] object-cover border border-white/20" />
+              <div class="absolute inset-x-0 bottom-3 flex justify-center gap-2" id="hero-carousel-dots"></div>
+              <button id="hero-prev" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/35 hover:bg-black/50 text-white w-9 h-9 rounded-full">❮</button>
+              <button id="hero-next" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/35 hover:bg-black/50 text-white w-9 h-9 rounded-full">❯</button>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="flex gap-[20px] mr-[-100px] lg:mr-[-250px]">
-          <button
-            class="hidden md:block border bg-[#0F2144] text-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
-            onclick="openRegistration()"
-            style="font-family: 'Montserrat', sans-serif"
-          >
-            register
-          </button>
-          <button
-            class="hidden lg:block border-[2px] border-[#3B888E] px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
-            style="font-family: 'Montserrat', sans-serif"
-          >
-            <a href="" class="block hover:text-red-400">Login</a>
-          </button>
+      <!-- Key Access Grid (APSA-style information hub) -->
+      <section class="max-w-6xl mx-auto px-6 py-14">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <a href="contact.html" class="group border rounded-xl p-6 bg-white hover:shadow-md transition">
+            <p class="text-xs tracking-widest uppercase text-[#3B888E]">Patients & Families</p>
+            <h3 class="mt-2 text-lg font-bold text-[#0F2144]">Find guidance and support</h3>
+            <p class="mt-2 text-sm text-gray-600">Understand common paediatric surgical conditions and where to seek specialist help.</p>
+          </a>
+          <a href="newsevents.html" class="group border rounded-xl p-6 bg-white hover:shadow-md transition">
+            <p class="text-xs tracking-widest uppercase text-[#3B888E]">Annual Meeting</p>
+            <h3 class="mt-2 text-lg font-bold text-[#0F2144]">National scientific programme</h3>
+            <p class="mt-2 text-sm text-gray-600">Join the flagship gathering for knowledge exchange, abstracts, and professional networking.</p>
+          </a>
+          <a href="#donate" class="group border rounded-xl p-6 bg-white hover:shadow-md transition">
+            <p class="text-xs tracking-widest uppercase text-[#3B888E]">GAPS Foundation</p>
+            <h3 class="mt-2 text-lg font-bold text-[#0F2144]">Support the next generation</h3>
+            <p class="mt-2 text-sm text-gray-600">Contribute to scholarships, training opportunities, and equitable child surgical access.</p>
+          </a>
+          <a href="members.html" class="group border rounded-xl p-6 bg-white hover:shadow-md transition">
+            <p class="text-xs tracking-widest uppercase text-[#3B888E]">Surgeon Wellbeing</p>
+            <h3 class="mt-2 text-lg font-bold text-[#0F2144]">Stronger teams, safer care</h3>
+            <p class="mt-2 text-sm text-gray-600">Promoting peer support, wellness awareness, and resilient paediatric surgery teams.</p>
+          </a>
+          <a href="research.html" class="group border rounded-xl p-6 bg-white hover:shadow-md transition">
+            <p class="text-xs tracking-widest uppercase text-[#3B888E]">Knowledge Library</p>
+            <h3 class="mt-2 text-lg font-bold text-[#0F2144]">Clinical resources</h3>
+            <p class="mt-2 text-sm text-gray-600">Position statements, educational tools, and evidence-informed clinical materials.</p>
+          </a>
+          <a href="#collaborate" class="group border rounded-xl p-6 bg-white hover:shadow-md transition">
+            <p class="text-xs tracking-widest uppercase text-[#3B888E]">Advocacy & Partnerships</p>
+            <h3 class="mt-2 text-lg font-bold text-[#0F2144]">Collaborate for policy impact</h3>
+            <p class="mt-2 text-sm text-gray-600">Work across institutions and sectors to improve paediatric surgical systems in Ghana.</p>
+          </a>
         </div>
+      </section>
 
-        <!-- Hamburger Menu (Always Visible) -->
-        <button class="text-[#3B888E]" id="menu-btn">
-          <svg
-            class="w-8 h-8"
-            fill="none"
-            stroke="#0F2144"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-          <p class="text-[12px] font-bold text-[#0F2144]">Menu</p>
-        </button>
-      </div>
-
-      <!-- Menu Links (Initially Hidden) -->
-      <ul
-        id="menu"
-        class="hidden fixed top-16 left-0 w-full bg-white text-cyan-600 text-lg font-semibold space-y-2 p-4 shadow-lg"
-      >
-        <li>
-          <a href="index.html" class="block px-4 py-2 hover:text-red-400"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a href="about.html" class="block px-4 py-2 hover:text-red-400"
-            >About</a
-          >
-        </li>
-        <li>
-          <a href="registries.html" class="block px-4 py-2 hover:text-red-400"
-            >National Registry</a
-          >
-        </li>
-        <li>
-          <a href="heroes.html" class="block px-4 py-2 hover:text-red-400"
-            >Our Heroes</a
-          >
-        </li>
-        <li>
-          <a href="research.html" class="block px-4 py-2 hover:text-red-400"
-            >Research</a
-          >
-        </li>
-        <li>
-          <a href="newsevents.html" class="block px-4 py-2 hover:text-red-400"
-            >News & Events</a
-          >
-        </li>
-        <li>
-          <a href="members.html" class="block px-4 py-2 hover:text-red-400"
-            >Members</a
-          >
-        </li>
-        <li>
-          <a href="contact.html" class="block px-4 py-2 hover:text-red-400"
-            >Contact Us</a
-          >
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Main Content Placeholder -->
-    <section
-      class="mt-[140px] flex flex-col items-center justify-center bg-gradient-to-r from-[#234558] via-[#2B5B65] to-[#3A7B80] text-white w-full h-full pt-[30px]"
-    >
-      <h1
-        class="text-center text-3xl font-bold text-[40px] tracking-wide leading-[50px] mt-[50px]"
-        style="font-family: 'Montserrat', sans-serif"
-      >
-        Welcome to the Ghana Association of Paediatric Surgeons
-      </h1>
-
-      <div class="my-[50px] flex flex-col items-center justify-center">
-        <div class="flex gap-[20px]">
-          <button
-            class="md:hidden border-[3px] bg-[#037383] text-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px]"
-            onclick="openRegistration()"
-            style="font-family: 'Montserrat', sans-serif"
-          >
-            Register
-          </button>
-          <button
-            class="md:hidden border-[2px] border-white px-6 py-[8px] rounded-[30px] text-center shadow-lg text-[14px] bg-[#0F2144]"
-            style="font-family: 'Montserrat', sans-serif"
-          >
-            <a href="" class="block hover:text-red-400">Login</a>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="text-center">
-      <div class="relative w-full max-w-lg mx-auto">
-        <img
-          id="carousel-image"
-          src="Images/hesse1.jpg"
-          alt="Gallery"
-          class="w-full h-auto rounded-lg"
-        />
-        <div class="absolute inset-0 flex items-center justify-between">
-          <button
-            onclick="prevImage()"
-            class="bg-white rounded-full p-2 shadow-lg"
-          >
-            ❮
-          </button>
-          <button
-            onclick="nextImage()"
-            class="bg-white rounded-full p-2 shadow-lg"
-          >
-            ❯
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section id="registry" class="bg-[#FFEDDB] py-16">
-      <div class="container mx-auto text-center">
-        <h2 class="text-3xl font-bold text-[#8E4B3B]">National Registry</h2>
-        <p class="mt-4 text-lg text-gray-700 px-[30px]">
-          Our national registry helps us collect valuable data all over Ghana on
-          a variety of conditions. This is to help make research data more
-          available and accessible to members of GAPS.
-        </p>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8 mx-4">
-          <!-- Colorectal -->
-          <div
-            class="bg-gradient-to-br from-[#234558] to-[#3A7B80] p-4 rounded-lg shadow-lg text-white text-center hover:scale-105 transition-transform duration-300 cursor-pointer"
-            onclick="window.open('colorectal.html', '_blank')"
-          >
-            Colorectal
+      <!-- Highlights / Services -->
+      <section class="max-w-6xl mx-auto py-16 px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-xl border shadow-sm hover:shadow-lg transition bg-white">
+            <h3 class="font-semibold text-lg">Education & Training</h3>
+            <p class="mt-2 text-sm text-gray-600">Fellowships, workshops and ongoing professional development for paediatric surgeons.</p>
           </div>
-
-          <!-- Hepatobiliary -->
-          <div
-            class="bg-gradient-to-br from-[#037383] to-[#55A2A3] p-4 rounded-lg shadow-lg text-white text-center hover:scale-105 transition-transform duration-300"
-          >
-            Hepatobiliary
+          <div class="p-6 rounded-xl border shadow-sm hover:shadow-lg transition bg-white">
+            <h3 class="font-semibold text-lg">Research & Data</h3>
+            <p class="mt-2 text-sm text-gray-600">Supporting evidence-based care through collaborative research and data sharing.</p>
           </div>
-
-          <!-- Genitourinary -->
-          <div
-            class="bg-gradient-to-br from-red-400 to-[#FF8A65] p-4 rounded-lg shadow-lg text-white text-center hover:scale-105 transition-transform duration-300"
-          >
-            Genitourinary
-          </div>
-
-          <!-- Hernias -->
-          <div
-            class="bg-gradient-to-br from-[#0F2144] to-[#1D4D72] p-4 rounded-lg shadow-lg text-white text-center hover:scale-105 transition-transform duration-300"
-          >
-            Hernias
-          </div>
-
-          <!-- Neonatal -->
-          <div
-            class="bg-gradient-to-br from-[#FFEDDB] to-[#FFA891] p-4 rounded-lg shadow-lg text-[#8E4B3B] text-center hover:scale-105 transition-transform duration-300"
-          >
-            Neonatal
-          </div>
-
-          <!-- Tumours -->
-          <div
-            class="bg-gradient-to-br from-[#3B888E] to-[#55A2A3] p-4 rounded-lg shadow-lg text-white text-center hover:scale-105 transition-transform duration-300"
-          >
-            Tumours
-          </div>
-
-          <!-- Trauma -->
-          <div
-            class="bg-gradient-to-br from-[#8E4B3B] to-[#F0C0B0] p-4 rounded-lg shadow-lg text-white text-center hover:scale-105 transition-transform duration-300"
-          >
-            Trauma
-          </div>
-
-          <!-- Others -->
-          <div
-            class="bg-gradient-to-br from-[#F6A7A8] to-[#FFD5D5] p-4 rounded-lg shadow-lg text-[#8E4B3B] text-center hover:scale-105 transition-transform duration-300"
-          >
-            Others
+          <div class="p-6 rounded-xl border shadow-sm hover:shadow-lg transition bg-white">
+            <h3 class="font-semibold text-lg">Advocacy</h3>
+            <p class="mt-2 text-sm text-gray-600">Working with stakeholders to improve paediatric surgical services and policies.</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer class="bg-[#0F2144] text-white py-4 text-center">
-      <p>
-        &copy; 2024 Ghana Association of Paediatric Surgeons. All rights
-        reserved.
-      </p>
+      <!-- Strategic Priorities -->
+      <section class="py-14 bg-[#f8fbfd] border-y">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="flex items-end justify-between gap-4 flex-wrap">
+            <div>
+              <p class="text-sm uppercase tracking-widest text-[#3B888E] font-semibold">Strategic Priorities</p>
+              <h2 class="text-3xl font-bold text-[#0F2144] mt-1">Building a high-performing paediatric surgical system</h2>
+            </div>
+            <a href="about.html" class="text-sm font-semibold text-[#0F2144]">Learn more →</a>
+          </div>
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <article class="rounded-xl bg-white p-5 shadow-sm border border-cyan-100">
+              <h3 class="font-semibold">Clinical Quality</h3>
+              <p class="mt-2 text-sm text-gray-600">Shared protocols and audits to improve perioperative and long-term outcomes.</p>
+            </article>
+            <article class="rounded-xl bg-white p-5 shadow-sm border border-cyan-100">
+              <h3 class="font-semibold">Workforce Growth</h3>
+              <p class="mt-2 text-sm text-gray-600">Mentorship pathways that strengthen training and specialist retention.</p>
+            </article>
+            <article class="rounded-xl bg-white p-5 shadow-sm border border-cyan-100">
+              <h3 class="font-semibold">Research Leadership</h3>
+              <p class="mt-2 text-sm text-gray-600">Multicentre studies addressing local and regional paediatric surgical priorities.</p>
+            </article>
+            <article class="rounded-xl bg-white p-5 shadow-sm border border-cyan-100">
+              <h3 class="font-semibold">Policy & Advocacy</h3>
+              <p class="mt-2 text-sm text-gray-600">Partnership with public institutions to improve equitable surgical access.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Program Spotlight -->
+      <section class="max-w-6xl mx-auto py-16 px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          <div class="lg:col-span-3 rounded-2xl overflow-hidden shadow-lg border">
+            <img src="Images/2026 conference.jpeg" alt="GAPS program" class="h-60 md:h-72 lg:h-64 w-full object-cover" />
+          </div>
+          <div class="lg:col-span-2 rounded-2xl bg-gradient-to-br from-[#0F2144] to-[#3B888E] text-white p-8 lg:pb-6">
+            <p class="text-xs tracking-[0.25em] uppercase text-cyan-100">Program Spotlight</p>
+            <h2 class="text-3xl font-bold mt-2">National Paediatric Surgery Learning Network</h2>
+            <p class="mt-4 text-cyan-100">A coordinated platform for case conferences, simulation-based training, and quality improvement across Ghana.</p>
+            <a href="research.html" class="inline-block mt-6 bg-white text-[#0F2144] font-semibold px-5 py-3 rounded-full">Explore programmes</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- News & Events preview -->
+      <section class="max-w-6xl mx-auto py-16 px-6">
+        <div class="flex justify-between items-center">
+          <h2 class="text-2xl font-bold">News & Events</h2>
+          <a href="newsevents.html" class="text-sm text-[#0F2144]">See all</a>
+        </div>
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="p-6 border rounded-lg">
+            <h3 class="font-semibold">Annual Scientific Meeting announced</h3>
+            <p class="text-sm text-gray-600 mt-2">Join colleagues for the 2026 meeting — abstract submissions open.</p>
+          </article>
+          <article class="p-6 border rounded-lg">
+            <h3 class="font-semibold">New training workshop</h3>
+            <p class="text-sm text-gray-600 mt-2">Hands-on course in neonatal surgical care planned for regional centres.</p>
+          </article>
+          <article class="p-6 border rounded-lg">
+            <h3 class="font-semibold">Research collaborations</h3>
+            <p class="text-sm text-gray-600 mt-2">Call for collaborators on multi-centre outcomes studies.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Weekly Digest + Events (association-style) -->
+      <section class="bg-[#f8fbfd] border-y">
+        <div class="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <article class="bg-white border rounded-2xl p-7 shadow-sm">
+            <p class="text-xs uppercase tracking-[0.2em] text-[#3B888E] font-semibold">Weekly Digest</p>
+            <h3 class="mt-2 text-2xl font-bold text-[#0F2144]">2-Minute GAPS Brief</h3>
+            <p class="mt-3 text-sm text-gray-600">A concise weekly update of new research highlights, policy updates, upcoming deadlines, and opportunities for members.</p>
+            <a href="newsevents.html" class="inline-block mt-5 text-sm font-semibold text-[#0F2144]">View updates →</a>
+          </article>
+          <article class="bg-white border rounded-2xl p-7 shadow-sm">
+            <p class="text-xs uppercase tracking-[0.2em] text-[#3B888E] font-semibold">Events Calendar</p>
+            <h3 class="mt-2 text-2xl font-bold text-[#0F2144]">Upcoming meetings & workshops</h3>
+            <ul class="mt-4 space-y-3 text-sm text-gray-700">
+              <li><span class="font-semibold">Q1:</span> National Paediatric Surgery Scientific Forum</li>
+              <li><span class="font-semibold">Q2:</span> Skills & Simulation Training Series</li>
+              <li><span class="font-semibold">Q3:</span> Collaborative Research Roundtable</li>
+            </ul>
+            <a href="newsevents.html" class="inline-block mt-5 text-sm font-semibold text-[#0F2144]">Open full calendar →</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Donate section -->
+      <section id="donate" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="rounded-2xl overflow-hidden border shadow-sm grid grid-cols-1 lg:grid-cols-5">
+          <div class="lg:col-span-3 bg-gradient-to-br from-[#0F2144] via-[#234558] to-[#3B888E] text-white p-10">
+            <p class="text-xs uppercase tracking-[0.2em] text-cyan-100">Donate</p>
+            <h2 class="mt-2 text-3xl font-bold">Help expand life-saving paediatric surgical care</h2>
+            <p class="mt-4 text-cyan-100 max-w-2xl">Your support strengthens training, research, patient education, and outreach for children who need specialist surgical services.</p>
+            <ul class="mt-5 space-y-2 text-sm text-cyan-100">
+              <li>• Sponsor trainee workshops and simulation labs</li>
+              <li>• Support educational resources for families</li>
+              <li>• Fund collaborative outcomes research</li>
+            </ul>
+          </div>
+          <div class="lg:col-span-2 bg-white p-10 flex flex-col justify-center">
+            <p class="text-sm text-gray-600">To donate, contact GAPS directly by email with subject “Donation Support”.</p>
+            <a href="mailto:gapsghana.gh@gmail.com?subject=Donation%20Support%20for%20GAPS" class="mt-5 inline-block bg-[#0F2144] text-white px-5 py-3 rounded-full font-semibold text-center">Donate via Email</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Collaborate section -->
+      <section id="collaborate" class="max-w-6xl mx-auto px-6 pb-16">
+        <div class="rounded-2xl bg-white border p-8 md:p-10 shadow-sm">
+          <p class="text-xs uppercase tracking-[0.2em] text-[#3B888E] font-semibold">Collaborate</p>
+          <h2 class="mt-2 text-3xl font-bold text-[#0F2144]">Partner with GAPS</h2>
+          <p class="mt-3 text-gray-700 max-w-3xl">We welcome collaboration with hospitals, training institutions, NGOs, ministries, and global paediatric surgery partners to improve systems of care for children.</p>
+          <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+            <div class="rounded-lg border p-4">Multi-centre research collaborations</div>
+            <div class="rounded-lg border p-4">Training and mentorship partnerships</div>
+            <div class="rounded-lg border p-4">Policy and advocacy alliances</div>
+          </div>
+          <a href="mailto:gapsghana.gh@gmail.com?subject=Collaboration%20Request%20for%20GAPS" class="inline-block mt-6 bg-[#3B888E] text-white px-5 py-3 rounded-full font-semibold">Start Collaboration</a>
+        </div>
+      </section>
+
+      <!-- Partner band -->
+      <section class="bg-gray-50 border-y">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+          <p class="text-center text-sm uppercase tracking-widest text-gray-500">Collaborating with hospitals, institutions and public health partners</p>
+          <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div class="rounded-lg border bg-white p-4 font-semibold text-[#0F2144]">Teaching Hospitals</div>
+            <div class="rounded-lg border bg-white p-4 font-semibold text-[#0F2144]">Medical Schools</div>
+            <div class="rounded-lg border bg-white p-4 font-semibold text-[#0F2144]">Health Service</div>
+            <div class="rounded-lg border bg-white p-4 font-semibold text-[#0F2144]">Global Surgical Partners</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="max-w-6xl mx-auto px-6 py-16">
+        <div class="rounded-2xl bg-gradient-to-r from-[#0F2144] to-[#2B5B65] p-10 md:p-12 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <h2 class="text-3xl font-bold">Join the movement for better child surgical care</h2>
+            <p class="mt-3 text-cyan-100 max-w-2xl">Become part of Ghana’s leading paediatric surgical association through membership, scientific collaboration, and advocacy.</p>
+          </div>
+          <div class="flex gap-3">
+            <a href="register.html" class="bg-white text-[#0F2144] px-5 py-3 rounded-full font-semibold">Join GAPS</a>
+            <a href="contact.html" class="border border-white px-5 py-3 rounded-full">Contact us</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#0F2144] text-white mt-12">
+      <div class="max-w-6xl mx-auto p-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div>
+          <div class="font-bold">Ghana Association of Paediatric Surgeons</div>
+          <div class="text-sm text-cyan-200">Advancing paediatric surgical care in Ghana</div>
+        </div>
+        <div class="text-sm text-cyan-100">&copy; 2026 Ghana Association of Paediatric Surgeons. All rights reserved.</div>
+      </div>
     </footer>
 
     <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const menu = document.getElementById("menu");
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-      menuBtn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
+      const dropdownButtons = document.querySelectorAll('[data-dropdown-toggle]');
+      function closeDropdowns() {
+        dropdownButtons.forEach((button) => {
+          const menuName = button.getAttribute('data-dropdown-toggle');
+          const menu = document.querySelector(`[data-dropdown-menu="${menuName}"]`);
+          if (menu) menu.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      dropdownButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+          event.stopPropagation();
+          const menuName = button.getAttribute('data-dropdown-toggle');
+          const menu = document.querySelector(`[data-dropdown-menu="${menuName}"]`);
+          if (!menu) return;
+          const isClosed = menu.classList.contains('hidden');
+          closeDropdowns();
+          if (isClosed) {
+            menu.classList.remove('hidden');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
       });
-      let currentIndex = 0;
-      const images = [
-        "Images/nimako.webp",
-        "Images/party.jpg",
 
-        "Images/abantanga.jpg",
-        "Images/hesse1.jpg",
+      document.addEventListener('click', () => closeDropdowns());
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeDropdowns();
+      });
 
-        // Add more image paths as necessary
+      // Hero carousel
+      const heroImages = [
+        'Images/hesse1.jpg',
+        'Images/abantanga.jpg',
+        'Images/nimako.webp',
+
+      'Images/party.jpg',
+        'Images/2026 conference.jpeg',
+        'Images/2026 graduation.jpeg',
+        'Images/with boss Asman.jpeg',
+        'Images/bosses.jpeg',
       ];
 
-      function showImage(index) {
-        const imgElement = document.getElementById("carousel-image");
-        imgElement.src = images[index];
+      const heroImageEl = document.getElementById('hero-carousel-image');
+      const dotsContainer = document.getElementById('hero-carousel-dots');
+      const prevBtn = document.getElementById('hero-prev');
+      const nextBtn = document.getElementById('hero-next');
+      let heroIndex = 0;
+      let heroTimer;
+
+      function renderDots() {
+        dotsContainer.innerHTML = '';
+        heroImages.forEach((_, index) => {
+          const dot = document.createElement('button');
+          dot.className = `h-2.5 w-2.5 rounded-full transition ${index === heroIndex ? 'bg-white' : 'bg-white/45 hover:bg-white/70'}`;
+          dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+          dot.addEventListener('click', () => {
+            heroIndex = index;
+            renderHeroImage();
+            restartHeroAutoPlay();
+          });
+          dotsContainer.appendChild(dot);
+        });
       }
 
-      function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
+      function renderHeroImage() {
+        heroImageEl.src = heroImages[heroIndex];
+        renderDots();
       }
 
-      function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
+      function nextHeroImage() {
+        heroIndex = (heroIndex + 1) % heroImages.length;
+        renderHeroImage();
       }
 
-      // Automatic image transition
-      setInterval(nextImage, 3000);
+      function prevHeroImage() {
+        heroIndex = (heroIndex - 1 + heroImages.length) % heroImages.length;
+        renderHeroImage();
+      }
+
+      function restartHeroAutoPlay() {
+        clearInterval(heroTimer);
+        heroTimer = setInterval(nextHeroImage, 4200);
+      }
+
+      if (heroImageEl && prevBtn && nextBtn && dotsContainer) {
+        prevBtn.addEventListener('click', () => {
+          prevHeroImage();
+          restartHeroAutoPlay();
+        });
+        nextBtn.addEventListener('click', () => {
+          nextHeroImage();
+          restartHeroAutoPlay();
+        });
+
+        renderHeroImage();
+        restartHeroAutoPlay();
+      }
     </script>
   </body>
 </html>

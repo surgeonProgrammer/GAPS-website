@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learning Resources — Ghana Association of Paediatric Surgeons</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <style>body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}</style>
+  </head>
+  <body class="bg-white text-gray-900 antialiased">
+    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur z-50 border-b">
+      <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+        <a href="index.html" class="flex items-center gap-4">
+          <img src="Images/logo.png" alt="GAPS logo" class="h-14 w-14 object-contain rounded" />
+          <div>
+            <div class="text-lg font-bold text-[#0F2144]">Ghana Association of</div>
+            <div class="text-sm text-[#3B888E]">Paediatric Surgeons (GAPS)</div>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-5 text-sm font-medium">
+          <a href="index.html" class="hover:text-[#0F2144]">Home</a>
+          <a href="about.html" class="hover:text-[#0F2144]">About</a>
+
+          <div class="relative">
+            <button type="button" data-dropdown-toggle="resources" aria-expanded="false" class="flex items-center gap-1 hover:text-[#0F2144]">
+              Resources
+              <span>▾</span>
+            </button>
+            <div data-dropdown-menu="resources" class="hidden absolute top-full left-0 mt-2 w-56 bg-white border rounded-xl shadow-lg p-2 z-50">
+              <a href="research.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Research</a>
+              <a href="newsevents.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">News & Events</a>
+              <a href="learning.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50 font-semibold">Learning Resources</a>
+            </div>
+          </div>
+
+          <div class="relative">
+            <button type="button" data-dropdown-toggle="engage" aria-expanded="false" class="flex items-center gap-1 hover:text-[#0F2144]">
+              Engage
+              <span>▾</span>
+            </button>
+            <div data-dropdown-menu="engage" class="hidden absolute top-full left-0 mt-2 w-56 bg-white border rounded-xl shadow-lg p-2 z-50">
+              <a href="index.html#donate" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Donate</a>
+              <a href="index.html#collaborate" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Collaborate</a>
+              <a href="executive.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Executive Body</a>
+              <a href="members.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Members</a>
+              <a href="register.html" class="block px-3 py-2 rounded-lg hover:bg-gray-50">Join GAPS</a>
+            </div>
+          </div>
+
+          <a href="contact.html" class="hover:text-[#0F2144]">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="register.html" class="hidden xl:inline-block bg-[#0F2144] text-white px-4 py-2 rounded-full text-sm shadow">Join GAPS</a>
+          <button id="menu-btn" class="lg:hidden p-2 rounded hover:bg-gray-100">
+            <svg class="w-6 h-6 text-[#0F2144]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="hidden lg:hidden border-t">
+        <div class="p-4 flex flex-col gap-3">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="newsevents.html">News & Events</a>
+          <a href="learning.html">Learning Resources</a>
+          <a href="index.html#donate">Donate</a>
+          <a href="index.html#collaborate">Collaborate</a>
+          <a href="executive.html">Executive Body</a>
+          <a href="members.html">Members</a>
+          <a href="register.html">Join GAPS</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-28">
+      <section id="learning-resources" class="max-w-6xl mx-auto px-6 py-16">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <div>
+            <p class="text-xs uppercase tracking-[0.2em] text-[#3B888E] font-semibold">Learning Resources</p>
+            <h1 class="text-3xl font-bold text-[#0F2144] mt-2">Surgical Video Learning Hub</h1>
+            <p class="mt-3 text-gray-700 max-w-3xl">Upload procedure videos for educational viewing. Learners can watch, like, and comment, while total views and interactions are displayed per video.</p>
+          </div>
+          <a href="mailto:gapsghana.gh@gmail.com?subject=Video%20Resource%20Submission%20for%20GAPS" class="inline-block border border-[#0F2144] text-[#0F2144] px-5 py-3 rounded-full font-semibold">Submit via Email</a>
+        </div>
+
+        <div class="mt-8 bg-white border rounded-2xl p-6 shadow-sm">
+          <h2 class="text-xl font-bold text-[#0F2144]">Add Learning Video</h2>
+          <p class="mt-1 text-sm text-gray-600">Paste a shareable video URL (YouTube, Vimeo, etc.).</p>
+          <form id="video-upload-form" class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input name="title" required class="p-3 border rounded-lg" placeholder="Video title" />
+            <input name="url" required class="p-3 border rounded-lg" placeholder="Video URL (https://...)" />
+            <input name="thumbnail" class="p-3 border rounded-lg md:col-span-2" placeholder="Thumbnail image URL (optional)" />
+            <textarea name="description" rows="3" class="p-3 border rounded-lg md:col-span-2" placeholder="Short description"></textarea>
+            <div class="md:col-span-2 flex items-center gap-4">
+              <button type="submit" class="bg-[#0F2144] text-white px-5 py-3 rounded-full font-semibold">Upload video</button>
+              <p id="video-upload-status" class="text-sm text-gray-600"></p>
+            </div>
+          </form>
+        </div>
+
+        <div id="video-grid" class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </section>
+    </main>
+
+    <footer class="bg-[#0F2144] text-white mt-12">
+      <div class="max-w-6xl mx-auto p-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div>
+          <div class="font-bold">Ghana Association of Paediatric Surgeons</div>
+          <div class="text-sm text-cyan-200">Advancing paediatric surgical care in Ghana</div>
+        </div>
+        <div class="text-sm text-cyan-100">&copy; 2026 Ghana Association of Paediatric Surgeons. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+      const dropdownButtons = document.querySelectorAll('[data-dropdown-toggle]');
+      function closeDropdowns() {
+        dropdownButtons.forEach((button) => {
+          const menuName = button.getAttribute('data-dropdown-toggle');
+          const menu = document.querySelector(`[data-dropdown-menu="${menuName}"]`);
+          if (menu) menu.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      dropdownButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+          event.stopPropagation();
+          const menuName = button.getAttribute('data-dropdown-toggle');
+          const menu = document.querySelector(`[data-dropdown-menu="${menuName}"]`);
+          if (!menu) return;
+          const isClosed = menu.classList.contains('hidden');
+          closeDropdowns();
+          if (isClosed) {
+            menu.classList.remove('hidden');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      document.addEventListener('click', () => closeDropdowns());
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeDropdowns();
+      });
+
+      const learningStorageKey = 'gapsLearningVideos';
+      const videoGrid = document.getElementById('video-grid');
+      const uploadForm = document.getElementById('video-upload-form');
+      const uploadStatus = document.getElementById('video-upload-status');
+
+      const defaultLearningVideos = [
+        {
+          id: 'v1',
+          title: 'Neonatal Bowel Surgery Review',
+          url: 'https://www.youtube.com/',
+          description: 'Case-based review of neonatal bowel surgery principles.',
+          thumbnail: 'Images/2026 conference.jpeg',
+          views: 124,
+          likes: 36,
+          comments: ['Excellent teaching points.', 'Very practical summary.']
+        },
+        {
+          id: 'v2',
+          title: 'Paediatric Trauma Procedure Discussion',
+          url: 'https://www.youtube.com/',
+          description: 'Team briefing, operative planning, and post-op care notes.',
+          thumbnail: 'Images/2026 graduation.jpeg',
+          views: 98,
+          likes: 22,
+          comments: ['Helpful for residents.']
+        }
+      ];
+
+      function getLearningVideos() {
+        try {
+          const stored = JSON.parse(localStorage.getItem(learningStorageKey) || 'null');
+          if (Array.isArray(stored) && stored.length) return stored;
+          localStorage.setItem(learningStorageKey, JSON.stringify(defaultLearningVideos));
+          return defaultLearningVideos;
+        } catch {
+          return defaultLearningVideos;
+        }
+      }
+
+      function setLearningVideos(videos) {
+        localStorage.setItem(learningStorageKey, JSON.stringify(videos));
+      }
+
+      function escapeHtml(value) {
+        return (value || '').replace(/[&<>"']/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+      }
+
+      function renderLearningVideos() {
+        if (!videoGrid) return;
+        const videos = getLearningVideos();
+        videoGrid.innerHTML = videos.map((video) => {
+          const commentCount = Array.isArray(video.comments) ? video.comments.length : 0;
+          const safeComments = (video.comments || []).map((c) => `<li class="text-gray-700">• ${escapeHtml(c)}</li>`).join('');
+          return `
+            <article class="border rounded-2xl overflow-hidden shadow-sm bg-white">
+              <img src="${escapeHtml(video.thumbnail || 'Images/logo.png')}" alt="${escapeHtml(video.title)}" class="w-full h-44 object-cover" />
+              <div class="p-5">
+                <h3 class="font-bold text-[#0F2144]">${escapeHtml(video.title)}</h3>
+                <p class="mt-2 text-sm text-gray-600">${escapeHtml(video.description || '')}</p>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs">
+                  <span class="px-2 py-1 rounded bg-gray-100">Views: ${video.views || 0}</span>
+                  <span class="px-2 py-1 rounded bg-gray-100">Likes: ${video.likes || 0}</span>
+                  <span class="px-2 py-1 rounded bg-gray-100">Comments: ${commentCount}</span>
+                </div>
+                <div class="mt-4 flex gap-2">
+                  <button class="watch-video px-3 py-2 rounded-lg bg-[#0F2144] text-white text-sm" data-id="${escapeHtml(video.id)}">Watch</button>
+                  <button class="like-video px-3 py-2 rounded-lg border text-sm" data-id="${escapeHtml(video.id)}">Like</button>
+                </div>
+                <div class="mt-4">
+                  <label class="text-xs text-gray-500">Add comment</label>
+                  <div class="mt-1 flex gap-2">
+                    <input class="comment-input flex-1 p-2 border rounded text-sm" data-id="${escapeHtml(video.id)}" placeholder="Write a comment" />
+                    <button class="comment-video px-3 py-2 rounded-lg border text-sm" data-id="${escapeHtml(video.id)}">Post</button>
+                  </div>
+                </div>
+                <ul class="mt-3 text-sm space-y-1 max-h-28 overflow-auto">${safeComments || '<li class="text-gray-400">No comments yet.</li>'}</ul>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      function updateVideo(id, updater) {
+        const videos = getLearningVideos();
+        const idx = videos.findIndex((v) => v.id === id);
+        if (idx < 0) return;
+        videos[idx] = updater(videos[idx]);
+        setLearningVideos(videos);
+        renderLearningVideos();
+      }
+
+      if (uploadForm) {
+        uploadForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const data = Object.fromEntries(new FormData(uploadForm).entries());
+          if (!/^https?:\/\//i.test((data.url || '').trim())) {
+            uploadStatus.textContent = 'Please enter a valid video URL starting with http:// or https://';
+            return;
+          }
+          const videos = getLearningVideos();
+          videos.unshift({
+            id: `v${Date.now()}`,
+            title: (data.title || '').trim(),
+            url: (data.url || '').trim(),
+            description: (data.description || '').trim(),
+            thumbnail: (data.thumbnail || '').trim() || 'Images/logo.png',
+            views: 0,
+            likes: 0,
+            comments: []
+          });
+          setLearningVideos(videos);
+          renderLearningVideos();
+          uploadForm.reset();
+          uploadStatus.textContent = 'Video uploaded successfully.';
+        });
+      }
+
+      if (videoGrid) {
+        videoGrid.addEventListener('click', (e) => {
+          const target = e.target;
+          const id = target.getAttribute('data-id');
+          if (!id) return;
+
+          if (target.classList.contains('watch-video')) {
+            const videos = getLearningVideos();
+            const video = videos.find((v) => v.id === id);
+            if (video?.url) {
+              window.open(video.url, '_blank', 'noopener');
+              updateVideo(id, (v) => ({ ...v, views: (v.views || 0) + 1 }));
+            }
+          }
+
+          if (target.classList.contains('like-video')) {
+            updateVideo(id, (v) => ({ ...v, likes: (v.likes || 0) + 1 }));
+          }
+
+          if (target.classList.contains('comment-video')) {
+            const input = videoGrid.querySelector(`.comment-input[data-id="${id}"]`);
+            const text = (input?.value || '').trim();
+            if (!text) return;
+            updateVideo(id, (v) => ({ ...v, comments: [...(v.comments || []), text] }));
+          }
+        });
+      }
+
+      renderLearningVideos();
+    </script>
+  </body>
+</html>
